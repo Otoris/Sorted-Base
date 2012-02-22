@@ -19,8 +19,8 @@
             </header>
             <div id="post-divider"><hr class="hr1">
             <ul id="post-controls">
-				<li id="reply-control"><?php if ( comments_open() && ! post_password_required() ) : ?><?php comments_popup_link( __( 'Reply', 'sorted' ) , _x( '1', 'comments number', 'sorted' ), _x( '%', 'comments number', 'sorted' ) ); ?><a href="#">Reply</a><?php endif; ?></li>
-				<li id="tweet-control"><a href="https://twitter.com/intent/tweet?text=EthanTrawicksBlogTweetTest">Tweet</a></li>
+				<li id="reply-control"><?php if ( comments_open() && ! post_password_required() ) : ?><?php comments_popup_link( __( 'Reply', 'sorted' ) , _x( '1', 'comments number', 'sorted' ), _x( '%', 'comments number', 'sorted' ) ); ?><?php endif; ?></li>
+				<li id="tweet-control"><a href="https://twitter.com/intent/tweet?text=<?php the_title();?>+//+<?php the_permalink(); ?>">Tweet</a></li>
 				<li id="forward-control"><a href="#">Forward</a></li>
 			</ul>
             </div>

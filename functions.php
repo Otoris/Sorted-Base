@@ -47,9 +47,9 @@ if ( ! function_exists( 'sorted_setup' ) ):
 		define( 'HEADER_IMAGE', '' );
 	
 		// The height and width of your custom header.
-		// Add a filter to twentyeleven_header_image_width and twentyeleven_header_image_height to change these values.
-		define( 'HEADER_IMAGE_WIDTH', apply_filters( 'twentyeleven_header_image_width', 622 ) );
-		define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'twentyeleven_header_image_height', 210 ) );
+		// Add a filter to sorted_header_image_width and sorted_header_image_height to change these values.
+		define( 'HEADER_IMAGE_WIDTH', apply_filters( 'sorted_header_image_width', 622 ) );
+		define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'sorted_header_image_height', 210 ) );
 	
 		// We'll be using post thumbnails for custom header images on posts and pages.
 		// We want them to be the size of the header image that we just defined
@@ -261,5 +261,24 @@ function sorted_admin_header_image() { ?>
 	</div>
 <?php }
 endif; // sorted_admin_header_image
+
+if ( ! function_exists( 'sorted_content_nav' ) ) :
+/**
+ * Display navigation to next/previous pages when applicable
+ */
+function sorted_content_nav( $nav_id ) {
+	global $wp_query;
+
+	if ( $wp_query->max_num_pages > 1 ) : ?>
+		<nav id="<?php echo $nav_id; ?>">
+			<h3 class="assistive-text"><?php _e( 'Post navigation', 'sorted' ); ?></h3>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'sorted' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'sorted' ) ); ?></div>
+		</nav><!-- #nav-above -->
+	<?php endif;
+}
+endif; // sorted_content_nav
+
+
 
 ?>

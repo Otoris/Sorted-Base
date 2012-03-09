@@ -76,6 +76,18 @@ if ( ! function_exists( 'sorted_setup' ) ):
 				'thumbnail_url' => '%s/images/headers/common-ground-thumbnail.jpg',
 				/* translators: header image description */
 				'description' => __( 'Common Ground', 'sorted' )
+			),
+			'fading-sky' => array(
+				'url' => '%s/images/headers/fading-sky.jpg',
+				'thumbnail_url' => '%s/images/headers/fading-sky-thumbnail.jpg',
+				/* translators: header image description */
+				'description' => __( 'Fading Sky', 'sorted' )
+			),
+			'curious' => array(
+				'url' => '%s/images/headers/curious.jpg',
+				'thumbnail_url' => '%s/images/headers/curious-thumbnail.jpg',
+				/* translators: header image description */
+				'description' => __( 'Curious', 'sorted' )
 			)
 		) );
 	}

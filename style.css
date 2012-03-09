@@ -494,7 +494,7 @@ img.size-large {
 	float: left;
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 100%;
+	max-width: 960px;
 	height: auto;
 	display: block;
 }
